@@ -8,20 +8,20 @@
 
 }
 :root{
-	--bodyColor: #e9f2ff;
+	--bodyColor: linear-gradient(to right, #595fd1, #8c91f7);
 	--formColor: #f8f9fd;
 	--textColor: #242a2f;
 	--borderColor: #9aa1af;
-	--buttonColor: #656ada;
+	--buttonColor: #595fd1;
+	--shadowColor: rgba(0, 0, 0, .5);
 }
 body{
 	height: 100vh;
 	display: grid;
 	place-content: center;
-	background-image: linear-gradient(to right, #595fd1, #656ada, #7075e3, #7c81eb, #878cf4);
+	background-image: var(--bodyColor)
 }
 form{
-	position: relative;
 	width: 450px;
 	background-color: var(--formColor);
 	display: flex;
@@ -29,25 +29,26 @@ form{
 	align-items: center;
 	flex-direction: column;
     row-gap: 40px;
-	padding:0 0 30px 0;
-	box-shadow: 0px 5px 10px rgba(0, 0, 0, .5);
-	border-radius: 15px;
+	padding-bottom: 30px;
+	box-shadow: 0px 5px 15px var(--shadowColor);
+}
+form,input,button{
+    border-radius: 10px;
 }
 form h1{
 	font-size: 4em;
 	font-weight: 500;
-	margin: 20px 0;
+	margin: 15px 0;
 	color: var(--textColor);
 	text-transform: capitalize;
-
 }
 form h1::first-letter{
 	color: var(--buttonColor);
 	font-size: 2em;
+	font-weight: 300;
 }
 form div{
 	width: 85%;
-	/* height: 100px; */
 	justify-content: inherit;
 	display: inherit;
 	flex-direction: inherit;
@@ -58,27 +59,12 @@ form div input{
 	background-color: transparent;
 	border: none;
 	border: 1px solid var(--borderColor);
-	border-radius: 15px;
 	outline: none;
 }
 input,
-textarea,
 label{
 	font-size: 18px;
 	color: var(--textColor);
-}
-form .massage{
-   width: 80%;
-   height: 	200px;
-   gap: 15px;
-}
-form .massage textarea{
-
-	border: 1px solid var(--borderColor);
-	border-radius: 10px;
-	padding: 15px;
-	outline: none;
-	width: 100%;
 }
 form button{
 	display: inline-flex;
@@ -87,11 +73,6 @@ form button{
 	background-color: var(--buttonColor);
 	color: var(--formColor);
 	border: none;
-	border-radius: 15px;
 	font-size: 18px;
 	cursor: pointer;
-}
-input:focus,
-textarea:focus{
-	background-color: var(--bodyColor);
 }
